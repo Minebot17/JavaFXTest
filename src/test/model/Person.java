@@ -8,6 +8,9 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import test.util.LocalDateAdapter;
+
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Класс-модель для адресата (Person).
@@ -107,6 +110,7 @@ public class Person {
         return city;
     }
 
+    @XmlJavaTypeAdapter(LocalDateAdapter.class)
     public LocalDate getBirthday() {
         return birthday.get();
     }
